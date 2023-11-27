@@ -1,0 +1,204 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> NEWROAD recorrido STOP expression
+Rule 2     expression -> START recorrido STOP
+Rule 3     recorrido -> instruccion
+Rule 4     recorrido -> instruccion recorrido
+Rule 5     instruccion -> MOVE MOVEDIR ARGUMENT
+Rule 6     instruccion -> TURN TURNDIR ARGUMENT
+Rule 7     instruccion -> REFERENCEROAD
+
+Terminals, with rules where they appear
+
+ARGUMENT             : 5 6
+MOVE                 : 5
+MOVEDIR              : 5
+NEWROAD              : 1
+REFERENCEROAD        : 7
+START                : 2
+STOP                 : 1 2
+TURN                 : 6
+TURNDIR              : 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 0
+instruccion          : 3 4
+recorrido            : 1 2 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . NEWROAD recorrido STOP expression
+    (2) expression -> . START recorrido STOP
+
+    NEWROAD         shift and go to state 2
+    START           shift and go to state 3
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+
+
+
+state 2
+
+    (1) expression -> NEWROAD . recorrido STOP expression
+    (3) recorrido -> . instruccion
+    (4) recorrido -> . instruccion recorrido
+    (5) instruccion -> . MOVE MOVEDIR ARGUMENT
+    (6) instruccion -> . TURN TURNDIR ARGUMENT
+    (7) instruccion -> . REFERENCEROAD
+
+    MOVE            shift and go to state 6
+    TURN            shift and go to state 7
+    REFERENCEROAD   shift and go to state 8
+
+    recorrido                      shift and go to state 4
+    instruccion                    shift and go to state 5
+
+state 3
+
+    (2) expression -> START . recorrido STOP
+    (3) recorrido -> . instruccion
+    (4) recorrido -> . instruccion recorrido
+    (5) instruccion -> . MOVE MOVEDIR ARGUMENT
+    (6) instruccion -> . TURN TURNDIR ARGUMENT
+    (7) instruccion -> . REFERENCEROAD
+
+    MOVE            shift and go to state 6
+    TURN            shift and go to state 7
+    REFERENCEROAD   shift and go to state 8
+
+    recorrido                      shift and go to state 9
+    instruccion                    shift and go to state 5
+
+state 4
+
+    (1) expression -> NEWROAD recorrido . STOP expression
+
+    STOP            shift and go to state 10
+
+
+state 5
+
+    (3) recorrido -> instruccion .
+    (4) recorrido -> instruccion . recorrido
+    (3) recorrido -> . instruccion
+    (4) recorrido -> . instruccion recorrido
+    (5) instruccion -> . MOVE MOVEDIR ARGUMENT
+    (6) instruccion -> . TURN TURNDIR ARGUMENT
+    (7) instruccion -> . REFERENCEROAD
+
+    STOP            reduce using rule 3 (recorrido -> instruccion .)
+    MOVE            shift and go to state 6
+    TURN            shift and go to state 7
+    REFERENCEROAD   shift and go to state 8
+
+    instruccion                    shift and go to state 5
+    recorrido                      shift and go to state 11
+
+state 6
+
+    (5) instruccion -> MOVE . MOVEDIR ARGUMENT
+
+    MOVEDIR         shift and go to state 12
+
+
+state 7
+
+    (6) instruccion -> TURN . TURNDIR ARGUMENT
+
+    TURNDIR         shift and go to state 13
+
+
+state 8
+
+    (7) instruccion -> REFERENCEROAD .
+
+    MOVE            reduce using rule 7 (instruccion -> REFERENCEROAD .)
+    TURN            reduce using rule 7 (instruccion -> REFERENCEROAD .)
+    REFERENCEROAD   reduce using rule 7 (instruccion -> REFERENCEROAD .)
+    STOP            reduce using rule 7 (instruccion -> REFERENCEROAD .)
+
+
+state 9
+
+    (2) expression -> START recorrido . STOP
+
+    STOP            shift and go to state 14
+
+
+state 10
+
+    (1) expression -> NEWROAD recorrido STOP . expression
+    (1) expression -> . NEWROAD recorrido STOP expression
+    (2) expression -> . START recorrido STOP
+
+    NEWROAD         shift and go to state 2
+    START           shift and go to state 3
+
+    expression                     shift and go to state 15
+
+state 11
+
+    (4) recorrido -> instruccion recorrido .
+
+    STOP            reduce using rule 4 (recorrido -> instruccion recorrido .)
+
+
+state 12
+
+    (5) instruccion -> MOVE MOVEDIR . ARGUMENT
+
+    ARGUMENT        shift and go to state 16
+
+
+state 13
+
+    (6) instruccion -> TURN TURNDIR . ARGUMENT
+
+    ARGUMENT        shift and go to state 17
+
+
+state 14
+
+    (2) expression -> START recorrido STOP .
+
+    $end            reduce using rule 2 (expression -> START recorrido STOP .)
+
+
+state 15
+
+    (1) expression -> NEWROAD recorrido STOP expression .
+
+    $end            reduce using rule 1 (expression -> NEWROAD recorrido STOP expression .)
+
+
+state 16
+
+    (5) instruccion -> MOVE MOVEDIR ARGUMENT .
+
+    MOVE            reduce using rule 5 (instruccion -> MOVE MOVEDIR ARGUMENT .)
+    TURN            reduce using rule 5 (instruccion -> MOVE MOVEDIR ARGUMENT .)
+    REFERENCEROAD   reduce using rule 5 (instruccion -> MOVE MOVEDIR ARGUMENT .)
+    STOP            reduce using rule 5 (instruccion -> MOVE MOVEDIR ARGUMENT .)
+
+
+state 17
+
+    (6) instruccion -> TURN TURNDIR ARGUMENT .
+
+    MOVE            reduce using rule 6 (instruccion -> TURN TURNDIR ARGUMENT .)
+    TURN            reduce using rule 6 (instruccion -> TURN TURNDIR ARGUMENT .)
+    REFERENCEROAD   reduce using rule 6 (instruccion -> TURN TURNDIR ARGUMENT .)
+    STOP            reduce using rule 6 (instruccion -> TURN TURNDIR ARGUMENT .)
+

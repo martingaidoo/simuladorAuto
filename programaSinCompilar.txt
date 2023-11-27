@@ -1,0 +1,12 @@
+Nroad DeAaB:
+MoveForward[12];
+TurnRight[90];
+MoveBackward[4];
+TurnLeft[45];
+Stop;
+Start;
+#DeAaB;
+MoveForward[15];
+MoveBackward[32];
+#DeAaB;
+Stop;
