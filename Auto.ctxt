@@ -1,9 +1,13 @@
 #BlueJ class context
 comment0.target=Auto
-comment0.text=\n\ Write\ a\ description\ of\ class\ Auto\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=angulo
-comment1.target=void\ turnLeft(int)
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Auto\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=angulo
-comment2.target=void\ turnRight(int)
-numComments=3
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Auto\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=distancia
+comment1.target=void\ moveForward(int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Auto\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=distancia
+comment2.target=void\ moveBackward(int)
+comment3.params=angulo
+comment3.target=void\ turnLeft(int)
+comment4.params=angulo
+comment4.target=void\ turnRight(int)
+numComments=5

@@ -32,8 +32,8 @@ public class Auto extends Actor
     }
     
     public void turnLeft(int angulo){
-        int i = getRotation();
-        while(i/angulo!=1){
+        int i = 0;
+        while(i < angulo){
             Greenfoot.delay(1);
             setRotation(getRotation()-1);
             i++;
@@ -44,8 +44,8 @@ public class Auto extends Actor
     }
     
     public void turnRight(int angulo){
-        int i = getRotation();
-        while(i/angulo!=1){
+        int i = 0;
+        while(i < angulo){
             Greenfoot.delay(1);
             setRotation(getRotation()+1);
             i++;

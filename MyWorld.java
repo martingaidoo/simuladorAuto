@@ -14,7 +14,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(1000, 600, 1); 
-        addObject(autito, 300,200);
+        addObject(autito, 100,500);
         
     }
     public void act(){
@@ -23,17 +23,9 @@ public class MyWorld extends World
         }
     }
     public void movimiento(){
-		autito.moveForward(12);
-		autito.turnRight(90);
-		autito.moveBackward(4);
-		autito.turnLeft(45);
-		autito.moveForward(15);
-		autito.moveBackward(32);
-		autito.moveForward(12);
-		autito.turnRight(90);
-		autito.moveBackward(4);
-		autito.turnLeft(45);
 
+        autito.turnLeft(90);
+        autito.moveBackward(30);
     ejecucion++;
     }
 }

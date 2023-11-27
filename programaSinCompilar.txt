@@ -1,12 +1,13 @@
-Nroad DeAaB:
-MoveForward[12];
-TurnRight[90];
-MoveBackward[4];
+Nroad Estacionar:
 TurnLeft[45];
+MoveBackward[30];
 Stop;
+Nroad LlegarEstacionamiento:
+MoveForward[400];
+TurnLeft[90];
+MoveForward[200];
+TurnRight[90];
 Start;
-#DeAaB;
-MoveForward[15];
-MoveBackward[32];
-#DeAaB;
+#LlegarEstacionamiento;
+#Estacionar;
 Stop;

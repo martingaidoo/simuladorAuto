@@ -165,7 +165,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(1000, 600, 1); 
-        addObject(autito, 300,200);
+        addObject(autito, 100,500);
         
     }
     public void act(){
