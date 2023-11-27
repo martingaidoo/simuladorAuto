@@ -26,11 +26,11 @@ t_MOVE = r'Move'
 t_MOVEDIR = r'(Forward|Backward)'
 t_TURN = r'Turn'
 t_TURNDIR = r'(Left|Right)'
-t_ARGUMENT = r'\[\d+\];\n'
-t_START = r'Start;\n'
-t_STOP = r'Stop;\n'
-t_NEWROAD = r'Nroad\s[A-Z][a-zA-Z]+\:\n'
-t_REFERENCEROAD = r'\#[A-Z][a-zA-Z]+;\n'
+t_ARGUMENT = r'\[\d+\];\s*\n'
+t_START = r'Start;\s*\n'
+t_STOP = r'Stop;\s*\n'
+t_NEWROAD = r'Nroad\s[A-Z][a-zA-Z]+\:\s*\n'
+t_REFERENCEROAD = r'\#[A-Z][a-zA-Z]+;\s*\n'
 
 def t_error(t):
     print(f"Hay un caracter : '{t.value[0]}' que no conforma una instruccion valida")
@@ -82,7 +82,7 @@ def p_instruccion(p):
 
 # Construir el parser
 parser = yacc.yacc()
-with open('programaSinCompilar.txt','r+') as a:
+with open('programaSinCompilar.txt','r') as a:
     s=a.read()
 
 result = parser.parse(s)
@@ -153,25 +153,27 @@ if not error:
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
-* Write a description of class MyWorld here.
-* 
-* @author (your name) 
-* @version (a version number or a date)
-*/
+ * Write a description of class MyWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class MyWorld extends World
 {
-
-    /**
-    * Constructor for objects of class MyWorld.
-    * 
-    */
+    int ejecucion=0;
+    Auto autito = new Auto();
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
+        addObject(autito, 300,200);
+        
     }
-}
-
+    public void act(){
+        if (ejecucion==0){
+            movimiento();
+        }
+    }
+    public void movimiento(){
 '''
     )
 
@@ -180,6 +182,15 @@ public class MyWorld extends World
         print('The car was ' + i[0] + " " + i[1] + " " + (i[2])[1:-3] + ' meters' )
         aux=aux.replace('[','(')
         aux=aux.replace(']',')')
-        aux='auto1.' + aux[0].lower() + aux[1:]
+        aux='\t\tautito.' + aux[0].lower() + aux[1:]
         programa.writelines(aux)
+    
+
+    programa.writelines(
+        '''
+    ejecucion++;
+    }
+}
+'''
+    )
     programa.close()

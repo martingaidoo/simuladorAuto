@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -22,7 +23,17 @@ public class MyWorld extends World
         }
     }
     public void movimiento(){
-        //instrucciones
-        ejecucion++;
+		autito.moveForward(12);
+		autito.turnRight(90);
+		autito.moveBackward(4);
+		autito.turnLeft(45);
+		autito.moveForward(15);
+		autito.moveBackward(32);
+		autito.moveForward(12);
+		autito.turnRight(90);
+		autito.moveBackward(4);
+		autito.turnLeft(45);
+
+    ejecucion++;
     }
 }
