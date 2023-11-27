@@ -8,14 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    int ejecucion=0;
+    Auto autito = new Auto();
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1); 
+        super(600, 400, 1); 
+        addObject(autito, 300,200);
+        
+    }
+    public void act(){
+        if (ejecucion==0){
+            movimiento();
+        }
+    }
+    public void movimiento(){
+        //instrucciones
+        ejecucion++;
     }
 }
