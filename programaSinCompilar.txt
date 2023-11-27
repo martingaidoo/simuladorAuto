@@ -1,12 +1,14 @@
 Nroad Estacionar:
-TurnLeft[45];
+TurnLeft[90];
 MoveBackward[30];
 Stop;
 Nroad LlegarEstacionamiento:
 MoveForward[400];
 TurnLeft[90];
-MoveForward[200];
+MoveForward[80];
 TurnRight[90];
+MoveForward[78];
+Stop;
 Start;
 #LlegarEstacionamiento;
 #Estacionar;

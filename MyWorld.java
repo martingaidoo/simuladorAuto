@@ -23,9 +23,14 @@ public class MyWorld extends World
         }
     }
     public void movimiento(){
+		autito.moveForward(400);
+		autito.turnLeft(90);
+		autito.moveForward(80);
+		autito.turnRight(90);
+		autito.moveForward(78);
+		autito.turnLeft(90);
+		autito.moveBackward(30);
 
-        autito.turnLeft(90);
-        autito.moveBackward(30);
     ejecucion++;
     }
 }
