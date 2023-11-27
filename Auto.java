@@ -16,7 +16,7 @@ public class Auto extends Actor
         int contador = 0;
         while (contador< distancia){
             move(1);
-            Greenfoot.delay(50);
+            Greenfoot.delay(2);
             contador++;
         }
         
@@ -26,7 +26,7 @@ public class Auto extends Actor
         int contador = 0;
         while (contador< distancia){
             move(-1);
-            Greenfoot.delay(50);
+            Greenfoot.delay(2);
             contador++;
         }
     }
@@ -34,8 +34,8 @@ public class Auto extends Actor
     public void turnLeft(int angulo){
         int i = getRotation();
         while(i/angulo!=1){
-            Greenfoot.delay(150);
-            setRotation(getRotation()+1);
+            Greenfoot.delay(1);
+            setRotation(getRotation()-1);
             i++;
             if(getRotation()%2==0){
                 move(1);   
@@ -46,7 +46,7 @@ public class Auto extends Actor
     public void turnRight(int angulo){
         int i = getRotation();
         while(i/angulo!=1){
-            Greenfoot.delay(150);
+            Greenfoot.delay(1);
             setRotation(getRotation()+1);
             i++;
             if(getRotation()%2==0){
