@@ -12,7 +12,7 @@ public class MyWorld extends World
     Auto autito = new Auto();
     public MyWorld()
     {    
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
         addObject(autito, 300,200);
         
     }
